@@ -5,6 +5,11 @@ The purpose of this project is to analyze the variable bit rate (VBR) encoding o
 The project takes a HDR Rec. 2020 video file as input and generates a chart displaying the size of each frame. The charts show the frame sizes in kilobytes (KB) for each frame in the video sequence. The target and maximum bitrates are also displayed on the charts for comparison.
 ![Movie Legend](output/movie_legend.png)
 
+## Test Footage
+I put the test footage together, it can be found here as a ProRes 4444 XQ file. 
+[![Understanding Variable Bit Rate (VBR) Encoding](https://img.youtube.com/vi/yXRbtNwe0bU/0.jpg)](https://www.youtube.com/watch?v=yXRbtNwe0bU)
+
+## Target Bitrates
 The target bitrates for different codecs are defined in codec_target_bitrates.py. The bitrate provided is from developer documentation and is accurate for 29.97 fps. However, my project uses 24fps video, so I convert the target bitrates at runtime for 24fps.
 ```python
 CODEC_TARGET_BITRATES = {

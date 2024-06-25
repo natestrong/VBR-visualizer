@@ -17,4 +17,6 @@ CODEC_TARGET_BITRATES = {
 # Adjust bitrates for 24fps
 FPS_ADJUSTMENT_RATIO = 24 / 29.97
 for codec in CODEC_TARGET_BITRATES:
+    if codec == 'H264':
+        continue
     CODEC_TARGET_BITRATES[codec]['bitrate'] *= FPS_ADJUSTMENT_RATIO

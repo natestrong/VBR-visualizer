@@ -34,7 +34,7 @@ define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
 Root {
  inputs 0
  name /Users/nstrong/IdeaProjects/VBR-visualizer/nuke/vbr-example-scene_v01.nk
- frame 520
+ frame 542
  first_frame 0
  last_frame 554
  format "1920 1080 0 0 1920 1080 1 HD_1080"
@@ -159,12 +159,91 @@ expoglow { name expoglow1
  ypos -217
  selected false
  disable false
+
+ xpos 1241
+ ypos -217
+ selected false
+ disable false
+
+ xpos 1241
+ ypos -217
+ selected false
+ disable false
 }
 ColorBars {
  inputs 0
  name ColorBars1
  xpos -157
  ypos -344
+}
+Read {
+ inputs 0
+ file_type exr
+ file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/vbr-tester-01_v01/vbr-tester-01_v01_aces2065.####.exr
+ format "1920 1080 0 0 1920 1080 1 HD_1080"
+ first 0
+ last 554
+ origfirst 0
+ origlast 554
+ origset true
+ version 3
+ name Read4
+ xpos 434
+ ypos 15
+}
+set N9c541c00 [stack 0]
+Dot {
+ name Dot1
+ xpos 873
+ ypos 51
+}
+TimeOffset {
+ time ""
+ name TimeOffset4
+ xpos 839
+ ypos 137
+}
+Transform {
+ translate {-762 -706}
+ scale 0.1480000019
+ center {960 540}
+ name Transform3
+ xpos 839
+ ypos 161
+}
+Read {
+ inputs 0
+ file_type png
+ file /Users/nstrong/IdeaProjects/VBR-visualizer/output/ProRes_4444.png
+ format "1000 600 0 0 1000 600 1 "
+ origset true
+ version 1
+ name Read5
+ xpos 663
+ ypos 94
+}
+Reformat {
+ name Reformat4
+ xpos 663
+ ypos 180
+}
+Dot {
+ name Dot2
+ xpos 697
+ ypos 256
+}
+Merge2 {
+ inputs 2
+ name Merge1
+ xpos 839
+ ypos 253
+}
+push $N9c541c00
+Reformat {
+ black_outside true
+ name Reformat5
+ xpos 202
+ ypos 116
 }
 Read {
  inputs 0
@@ -295,7 +374,7 @@ Write {
  file_type exr
  write_ACES_compliant_EXR true
  first_part rgba
- version 1
+ version 2
  in_colorspace scene_linear
  out_colorspace scene_linear
  ocioColorspace scene_linear
@@ -305,88 +384,28 @@ Write {
  xpos -310
  ypos 122
 }
-Read {
- inputs 0
- file_type exr
- file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/vbr-tester-01_v01/vbr-tester-01_v01_aces2065.####.exr
- format "1920 1080 0 0 1920 1080 1 HD_1080"
- first 0
- last 554
- origfirst 0
- origlast 554
- origset true
- name Read4
- xpos 434
- ypos 15
-}
-set N28ae3600 [stack 0]
-Dot {
- name Dot1
- xpos 873
- ypos 51
-}
-TimeOffset {
- time ""
- name TimeOffset4
- xpos 839
- ypos 137
-}
-Transform {
- translate {-762 -706}
- scale 0.1480000019
- center {960 540}
- name Transform3
- xpos 839
- ypos 161
-}
-Read {
- inputs 0
- file_type png
- file "/Users/nstrong/IdeaProjects/VBR-visualizer/output/ProRes 4444.png"
- format "1000 600 0 0 1000 600 1 "
- origset true
- name Read5
- xpos 663
- ypos 94
-}
-Reformat {
- name Reformat4
- xpos 663
- ypos 180
-}
-Dot {
- name Dot2
- xpos 697
- ypos 256
-}
-Merge2 {
- inputs 2
- name Merge1
- xpos 839
- ypos 253
-}
-push $N28ae3600
+push $N9c541c00
 Write {
- file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/DNxHR_rec2020/vbr-tester-01_v01_rec2020_DNxHR_LB422.mov
+ file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/vbr-tester-01_v01_rec709_h264.mov
  file_type mov
  mov64_format "mov (QuickTime / MOV)"
- mov64_codec AVdh
+ mov64_codec h264
  mov64_dnxhr_codec_profile "LB 4:2:2 8-bit"
  mov_prores_codec_profile "ProRes 4:2:2 LT 10-bit"
  mov_h264_codec_profile "High 4:2:0 8-bit"
  mov64_pixel_format {{0}}
- mov64_quality High
+ mov64_quality Custom
  mov64_fast_start true
  mov64_write_timecode true
  mov64_gop_size 12
  mov64_b_frames 0
- mov64_bitrate 20000
- mov64_bitrate_tolerance 4000000
+ mov64_bitrate 28000
+ mov64_bitrate_tolerance 0
  mov64_quality_min 1
  mov64_quality_max 3
- colorspace "Output - Rec.2020 ST2084 (4000 nits)"
+ colorspace "Output - Rec.709"
  checkHashOnRead false
- version 18
+ version 19
  ocioColorspace scene_linear
  display ACES
  view sRGB
@@ -394,15 +413,7 @@ Write {
  xpos 434
  ypos 137
 }
-push $N28ae3600
-Reformat {
- black_outside true
- name Reformat5
- xpos 202
- ypos 116
-}
 Viewer {
- frame 520
  frame_range 63-554
  frame_range_lock true
  gl_buffer_depth half-float

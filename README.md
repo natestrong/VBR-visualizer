@@ -5,6 +5,9 @@ The purpose of this project is to analyze the variable bit rate (VBR) encoding o
 The project takes a HDR Rec. 2020 video file as input and generates a series of charts for each codec. The charts show the frame sizes in kilobytes (KB) for each frame in the video sequence. The target and maximum bitrates are also displayed on the charts for comparison.
 ![Movie Legend](output/movie_legend.png)
 
+Here is the an h264 Rec.709 version of the media used in my test:
+![vbr-tester-01_v01_rec709_h264.mov](output/vbr-tester-01_v01_rec709_h264.mov)
+
 The target bitrates for different codecs are defined in codec_target_bitrates.py. The bitrate provided is from developer documentation and is accurate for 29.97 fps. However, my project uses 24fps video, so I convert the target bitrates at runtime for 24fps.
 ```python
 CODEC_TARGET_BITRATES = {
@@ -18,6 +21,7 @@ CODEC_TARGET_BITRATES = {
     'DNxHR HQ': {'bitrate': 666, 'filename': 'dnxhr_hq'},
     'DNxHR SQ': {'bitrate': 441, 'filename': 'dnxhr_sq'},
     'DNxHR LB': {'bitrate': 137, 'filename': 'dnxhr_lb'},
+    'H264': {'bitrate': 16, 'filename': 'h264'}
 }
 ```
 
@@ -42,3 +46,6 @@ Below are the charts generated from analyzing the test footage. Each chart shows
 
     •	ProRes 422 Proxy
 ![ProRes 422 Proxy](output/ProRes_422_Proxy.png)
+
+    •	H264
+![H264](output/H264.png)

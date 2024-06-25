@@ -11,6 +11,7 @@ CODEC_TARGET_BITRATES = {
     'DNxHR HQ': {'bitrate': 666, 'filename': 'dnxhr_hq'},
     'DNxHR SQ': {'bitrate': 441, 'filename': 'dnxhr_sq'},
     'DNxHR LB': {'bitrate': 137, 'filename': 'dnxhr_lb'},
+    'H264': {'bitrate': 16, 'filename': 'h264'},
 }
 
 # Adjust bitrates for 24fps

@@ -1,0 +1,417 @@
+#! /Applications/Nuke15.0v4/Nuke15.0v4.app/Contents/MacOS/libnuke-15.0.4.dylib -nx
+version 15.0 v4
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="25" w="3840" h="2107" maximized="1" screen="0">
+        <splitter orientation="1">
+            <split size="40"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="3177" stretch="1"/>
+            <splitter orientation="2">
+                <split size="1225"/>
+                <dock id="" activePageId="Viewer.1">
+                    <page id="Viewer.1"/>
+                </dock>
+                <split size="862"/>
+                <dock id="" activePageId="DAG.1" focus="true">
+                    <page id="DAG.1"/>
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+            <split size="615"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+                <page id="uk.co.thefoundry.backgroundrenderview.1"/>
+                <page id="Scenegraph.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name /Users/nstrong/IdeaProjects/VBR-visualizer/nuke/vbr-example-scene_v01.nk
+ frame 520
+ first_frame 0
+ last_frame 554
+ format "1920 1080 0 0 1920 1080 1 HD_1080"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ colorManagement OCIO
+ OCIO_config custom
+ customOCIOConfigPath /opt/apps/internal/spaPy/addons/ocio/config.ocio
+ defaultViewerLUT "OCIO LUTs"
+ workingSpaceLUT scene_linear
+ monitorLut "sRGB (ACES)"
+ monitorOutLUT "sRGB (ACES)"
+ int8Lut matte_paint
+ int16Lut texture_paint
+ logLut compositing_log
+ floatLut scene_linear
+}
+OFXcom.genarts.sapphire.render.s_aurora_v1 {
+ inputs 0
+ mocha_project ""
+ Mocha 0
+ blur_mocha 0
+ mocha_opacity 1
+ invert_mocha false
+ resize_mocha 1
+ resize_rel_x 1
+ resize_rel_y 1
+ shift_mocha_x 0
+ shift_mocha_y 0
+ bypass_mocha false
+ show_mocha_only false
+ combine_masks Union
+ start {288.0000114 827.9999828}
+ start_uses_mocha false
+ smooth_start_track 0
+ point_1_enable false
+ control_point_1 {643.1999588 827.9999828}
+ point1_uses_mocha false
+ smooth_point1_track 0
+ point_2_enable true
+ control_point_2 {998.3999634 683.9999914}
+ point2_uses_mocha false
+ smooth_point2_track 0
+ point_3_enable true
+ control_point_3 {863.9999771 251.999985}
+ point3_uses_mocha false
+ smooth_point3_track 0
+ point_4_enable false
+ control_point_4 {1392.000046 302.3999691}
+ point4_uses_mocha false
+ smooth_point4_track 0
+ end {1727.999954 179.9999893}
+ end_uses_mocha false
+ smooth_end_track 0
+ start_color {0 0.8 0.259791}
+ start_color_panelDropped true
+ setKnobFlags {start_color_panelDropped +HIDDEN}
+ end_color {0.8 0.129213 0.446089}
+ end_color_panelDropped true
+ setKnobFlags {end_color_panelDropped +HIDDEN}
+ color_phase 0
+ stroke_size 0.25
+ brightness 0.3
+ softness 0.075
+ softness_rel_y 10
+ Swirling 1
+ swirl_complexity 3
+ swirl_magnitude 0.7
+ magnitude_rel_y 1.25
+ swirl_frequency 2
+ frequency_rel_y 10
+ swirl_speed_x 0.1
+ swirl_speed_y 0
+ Lighting 1
+ light_brightness 1
+ light_pos {671.9999886 179.9999893}
+ light_color 1
+ ambient_light 1
+ light_radius 1
+ light_softness 2
+ seed 0.123
+ bg_brightness 1
+ combine Screen
+ affect_alpha 0
+ mask_use Luma
+ setKnobFlags {mask_use +HIDDEN}
+ blur_mask 12
+ setKnobFlags {blur_mask +HIDDEN}
+ invert_mask false
+ setKnobFlags {invert_mask +HIDDEN}
+ ShowSpline true
+ ShowLightPos true
+ Enable_GPU true
+ version 17.51
+ version2 1067903
+ name S_Aurora1
+ xpos 1241
+ ypos -275
+}
+expoglow { name expoglow1
+ selected false
+ xpos 1241
+ ypos -217
+ PreGrade 1
+ gamma 0.38
+ GlowSettings 1
+ size 8.55
+ stretch 7.35
+ cropbehavior "incoming format"
+ PostGrade 1
+ maskChannelMask -rgba.alpha
+ ShiftRed 1
+ ShiftGreen 1
+ ShiftBlue 1
+
+ xpos 1241
+ ypos -217
+ selected false
+ disable false
+
+ xpos 1241
+ ypos -217
+ selected false
+ disable false
+}
+ColorBars {
+ inputs 0
+ name ColorBars1
+ xpos -157
+ ypos -344
+}
+Read {
+ inputs 0
+ file_type mov
+ file /Users/nstrong/Downloads/Meridian_UHD4k5994_HDR_P3PQ.mp4
+ format "3840 2160 0 0 3840 2160 1 UHD_4K"
+ last 43093
+ origlast 43093
+ origset true
+ colorspace "Output - P3-D65 ST2084 (2000 nits)"
+ name Read3
+ xpos 410
+ ypos -246
+}
+Reformat {
+ name Reformat2
+ xpos 410
+ ypos -117
+}
+TimeOffset {
+ time_offset -20900
+ time ""
+ name TimeOffset3
+ xpos 410
+ ypos -93
+}
+Constant {
+ inputs 0
+ channels rgb
+ name Constant3
+ xpos 204
+ ypos -195
+}
+Read {
+ inputs 0
+ file_type mov
+ file /Users/nstrong/Downloads/CosmosLaundromat_2k24p_HDR_P3PQ.mp4
+ format "2048 858 0 0 2048 858 1 "
+ last 18192
+ origlast 18192
+ origset true
+ colorspace "Output - P3-D65 ST2084 (4000 nits)"
+ name Read1
+ xpos -10
+ ypos -254
+}
+Reformat {
+ black_outside true
+ name Reformat3
+ xpos -10
+ ypos -164
+}
+TimeOffset {
+ time_offset -11300
+ time ""
+ name TimeOffset2
+ xpos -10
+ ypos -140
+}
+Constant {
+ inputs 0
+ channels rgb
+ name Constant2
+ xpos -175
+ ypos -198
+}
+ColorWheel {
+ inputs 0
+ gamma 0.45
+ rotate {{t}}
+ fillFormat false
+ area {{curve x1 -1845 x60 0} {curve x1 -640 x60 0} {curve x1 3706 x60 1920} {curve x1 1725 x60 1080}}
+ name ColorWheel1
+ xpos -310
+ ypos -198
+}
+Transform {
+ center {960 540}
+ name Transform1
+ xpos -310
+ ypos -126
+}
+TimeOffset {
+ time_offset 144
+ time ""
+ name TimeOffset1
+ xpos -310
+ ypos -102
+}
+Constant {
+ inputs 0
+ channels rgb
+ name Constant1
+ xpos -466
+ ypos -191
+}
+Read {
+ inputs 0
+ file_type tiff
+ file /Users/nstrong/Desktop/tifTest.tif
+ format "3583 2525 0 0 3583 2525 1 "
+ origset true
+ name Read2
+ xpos -616
+ ypos -199
+}
+Transform {
+ scale 0.8
+ center {1791.5 1262.5}
+ name Transform2
+ xpos -616
+ ypos -109
+}
+Reformat {
+ name Reformat1
+ xpos -616
+ ypos -85
+}
+Switch {
+ inputs 7
+ which {{curve 0 x120 0 x121 1 L x144 1 x145 2 x264 2 x265 3 x288 3 x289 4 x410 4 x411 5 x433 5 x434 6}}
+ name Switch1
+ xpos -310
+ ypos 55
+}
+Write {
+ file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/vbr-tester-01_v01/vbr-tester-01_v01_aces2065.####.exr
+ file_type exr
+ write_ACES_compliant_EXR true
+ first_part rgba
+ version 1
+ in_colorspace scene_linear
+ out_colorspace scene_linear
+ ocioColorspace scene_linear
+ display ACES
+ view sRGB
+ name Write1
+ xpos -310
+ ypos 122
+}
+Read {
+ inputs 0
+ file_type exr
+ file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/vbr-tester-01_v01/vbr-tester-01_v01_aces2065.####.exr
+ format "1920 1080 0 0 1920 1080 1 HD_1080"
+ first 0
+ last 554
+ origfirst 0
+ origlast 554
+ origset true
+ name Read4
+ xpos 434
+ ypos 15
+}
+set N28ae3600 [stack 0]
+Dot {
+ name Dot1
+ xpos 873
+ ypos 51
+}
+TimeOffset {
+ time ""
+ name TimeOffset4
+ xpos 839
+ ypos 137
+}
+Transform {
+ translate {-762 -706}
+ scale 0.1480000019
+ center {960 540}
+ name Transform3
+ xpos 839
+ ypos 161
+}
+Read {
+ inputs 0
+ file_type png
+ file "/Users/nstrong/IdeaProjects/VBR-visualizer/output/ProRes 4444.png"
+ format "1000 600 0 0 1000 600 1 "
+ origset true
+ name Read5
+ xpos 663
+ ypos 94
+}
+Reformat {
+ name Reformat4
+ xpos 663
+ ypos 180
+}
+Dot {
+ name Dot2
+ xpos 697
+ ypos 256
+}
+Merge2 {
+ inputs 2
+ name Merge1
+ xpos 839
+ ypos 253
+}
+push $N28ae3600
+Write {
+ file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/DNxHR_rec2020/vbr-tester-01_v01_rec2020_DNxHR_LB422.mov
+ file_type mov
+ mov64_format "mov (QuickTime / MOV)"
+ mov64_codec AVdh
+ mov64_dnxhr_codec_profile "LB 4:2:2 8-bit"
+ mov_prores_codec_profile "ProRes 4:2:2 LT 10-bit"
+ mov_h264_codec_profile "High 4:2:0 8-bit"
+ mov64_pixel_format {{0}}
+ mov64_quality High
+ mov64_fast_start true
+ mov64_write_timecode true
+ mov64_gop_size 12
+ mov64_b_frames 0
+ mov64_bitrate 20000
+ mov64_bitrate_tolerance 4000000
+ mov64_quality_min 1
+ mov64_quality_max 3
+ colorspace "Output - Rec.2020 ST2084 (4000 nits)"
+ checkHashOnRead false
+ version 18
+ ocioColorspace scene_linear
+ display ACES
+ view sRGB
+ name Write2
+ xpos 434
+ ypos 137
+}
+push $N28ae3600
+Reformat {
+ black_outside true
+ name Reformat5
+ xpos 202
+ ypos 116
+}
+Viewer {
+ frame 520
+ frame_range 63-554
+ frame_range_lock true
+ gl_buffer_depth half-float
+ useGPUForViewer true
+ useGPUForInputs true
+ disableGPUDitherForViewer true
+ viewerProcess "sRGB (ACES)"
+ monitorOutNDISenderName "Nuke - vbr-example-scene_v01 - Viewer1"
+ name Viewer1
+ xpos 115
+ ypos 316
+}

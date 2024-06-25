@@ -2,11 +2,8 @@
 ## Overview
 The purpose of this project is to analyze the variable bit rate (VBR) encoding of different video codecs by examining the frame sizes throughout a video sequence. The project generates charts to visually represent the frame sizes and compare them against the target and maximum bitrates defined by the codecs.
 
-The project takes a HDR Rec. 2020 video file as input and generates a series of charts for each codec. The charts show the frame sizes in kilobytes (KB) for each frame in the video sequence. The target and maximum bitrates are also displayed on the charts for comparison.
+The project takes a HDR Rec. 2020 video file as input and generates a chart displaying the size of each frame. The charts show the frame sizes in kilobytes (KB) for each frame in the video sequence. The target and maximum bitrates are also displayed on the charts for comparison.
 ![Movie Legend](output/movie_legend.png)
-
-Here is the an h264 Rec.709 version of the media used in my test:
-![vbr-tester-01_v01_rec709_h264.mov](output/vbr-tester-01_v01_rec709_h264.mov)
 
 The target bitrates for different codecs are defined in codec_target_bitrates.py. The bitrate provided is from developer documentation and is accurate for 29.97 fps. However, my project uses 24fps video, so I convert the target bitrates at runtime for 24fps.
 ```python

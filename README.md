@@ -2,7 +2,7 @@
 ## Overview
 The purpose of this project is to analyze the variable bit rate (VBR) encoding of different video codecs by examining the frame sizes throughout a video sequence. The project generates charts to visually represent the frame sizes and compare them against the target and maximum bitrates defined by the codecs.
 
-The project takes a HDR Rec. 2020 video file as input and generates a chart displaying the size of each frame. The charts show the frame sizes in kilobytes (KB) for each frame in the video sequence. The target and maximum bitrates are also displayed on the charts for comparison.
+My sample footage is a HDR Rec. 2020 video file; but any codec and colorspace can be provided. The charts show the frame sizes in kilobytes (KB) for each frame in the video sequence. The target and maximum bitrates are also displayed on the charts for comparison.
 ![Movie Legend](output/movie_legend.png)
 
 ## Test Footage

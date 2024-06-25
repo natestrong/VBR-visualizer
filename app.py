@@ -50,7 +50,7 @@ def plot_frame_sizes(frame_sizes, output_path, format_label, target_bitrate=None
     plt.legend()  # Bring back the legend
 
     # Save the plot
-    file_path = os.path.join(output_path, f'{format_label}.png')
+    file_path = os.path.join(output_path, f'{format_label}.png').replace(' ', '_')
     version = 1
     while os.path.exists(file_path):
         file_path = os.path.join(output_path, f'{format_label}_v{version}.png')

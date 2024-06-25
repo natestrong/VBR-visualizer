@@ -26,19 +26,19 @@ CODEC_TARGET_BITRATES = {
 Below are the charts generated from analyzing the test footage. Each chart shows the frame sizes in KB, along with the target and maximum frame sizes for comparison.
 
 	•	ProRes 4444 XQ
-![ProRes 4444 XQ](output/ProRes 4444 XQ.png)
+![ProRes 4444 XQ](output/ProRes_4444_XQ.png)
 
     •	ProRes 4444
-![ProRes 4444](output/ProRes 4444.png)
+![ProRes 4444](output/ProRes_4444.png)
 
     •	ProRes 422 HQ
-![ProRes 422 HQ](output/ProRes 422 HQ.png)
+![ProRes 422 HQ](output/ProRes_422_HQ.png)
 
     •	ProRes 422
-![ProRes 422](output/ProRes 422.png)
+![ProRes 422](output/ProRes_422.png)
 
     •	ProRes 422 LT
-![ProRes 422 LT](output/ProRes 422 LT.png)
+![ProRes 422 LT](output/ProRes_422_LT.png)
 
     •	ProRes 422 Proxy
-![ProRes 422 Proxy](output/ProRes 422 Proxy.png)
+![ProRes 422 Proxy](output/ProRes_422_Proxy.png)

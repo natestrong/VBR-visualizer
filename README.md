@@ -1,4 +1,4 @@
-# VBR Visualizer Project
+# VBR Visualizer
 ## Overview
 The purpose of this project is to analyze the variable bit rate (VBR) encoding of different video codecs by examining the frame sizes throughout a video sequence. The project generates charts to visually represent the frame sizes and compare them against the target and maximum bitrates defined by the codecs.
 

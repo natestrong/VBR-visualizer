@@ -2,19 +2,19 @@
 version 15.0 v4
 define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
 <layout version="1.0">
-    <window x="0" y="38" w="1728" h="1051" maximized="1" screen="0">
+    <window x="0" y="25" w="3840" h="2107" maximized="1" screen="0">
         <splitter orientation="1">
             <split size="40"/>
             <dock id="" hideTitles="1" activePageId="Toolbar.1">
                 <page id="Toolbar.1"/>
             </dock>
-            <split size="1065" stretch="1"/>
+            <split size="3177" stretch="1"/>
             <splitter orientation="2">
-                <split size="605"/>
+                <split size="1225"/>
                 <dock id="" activePageId="Viewer.1">
                     <page id="Viewer.1"/>
                 </dock>
-                <split size="426"/>
+                <split size="862"/>
                 <dock id="" activePageId="DAG.1" focus="true">
                     <page id="DAG.1"/>
                     <page id="Curve Editor.1"/>
@@ -34,9 +34,9 @@ define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
 Root {
  inputs 0
  name /Users/nstrong/IdeaProjects/VBR-visualizer/nuke/vbr-example-scene_v01.nk
- frame 240
+ frame 542
  first_frame 0
- last_frame 555
+ last_frame 554
  format "1920 1080 0 0 1920 1080 1 HD_1080"
  proxy_type scale
  proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
@@ -169,11 +169,6 @@ expoglow { name expoglow1
  ypos -217
  selected false
  disable false
-
- xpos 1241
- ypos -217
- selected false
- disable false
 }
 ColorBars {
  inputs 0
@@ -196,7 +191,54 @@ Read {
  xpos 434
  ypos 15
 }
-set N55968e00 [stack 0]
+set N9c541c00 [stack 0]
+Dot {
+ name Dot1
+ xpos 873
+ ypos 51
+}
+TimeOffset {
+ time ""
+ name TimeOffset4
+ xpos 839
+ ypos 137
+}
+Transform {
+ translate {-762 -706}
+ scale 0.1480000019
+ center {960 540}
+ name Transform3
+ xpos 839
+ ypos 161
+}
+Read {
+ inputs 0
+ file_type png
+ file /Users/nstrong/IdeaProjects/VBR-visualizer/output/ProRes_4444.png
+ format "1000 600 0 0 1000 600 1 "
+ origset true
+ version 1
+ name Read5
+ xpos 663
+ ypos 94
+}
+Reformat {
+ name Reformat4
+ xpos 663
+ ypos 180
+}
+Dot {
+ name Dot2
+ xpos 697
+ ypos 256
+}
+Merge2 {
+ inputs 2
+ name Merge1
+ xpos 839
+ ypos 253
+}
+push $N9c541c00
 Reformat {
  black_outside true
  name Reformat5
@@ -342,7 +384,7 @@ Write {
  xpos -310
  ypos 122
 }
-push $N55968e00
+push $N9c541c00
 Write {
  file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/vbr-tester-01_v01_rec709_h264.mov
  file_type mov
@@ -371,126 +413,8 @@ Write {
  xpos 434
  ypos 137
 }
-push $N55968e00
-Dot {
- name Dot1
- xpos 873
- ypos 51
-}
-set N8e9e9400 [stack 0]
-TimeOffset {
- time ""
- name TimeOffset4
- xpos 839
- ypos 137
-}
-Transform {
- translate {-762 -706}
- scale 0.1480000019
- center {960 540}
- name Transform3
- xpos 839
- ypos 161
-}
-Read {
- inputs 0
- file_type png
- file /Users/nstrong/IdeaProjects/VBR-visualizer/output/ProRes_4444.png
- format "1000 600 0 0 1000 600 1 "
- origset true
- version 1
- name Read5
- xpos 663
- ypos 94
-}
-Reformat {
- name Reformat4
- xpos 663
- ypos 180
-}
-Dot {
- name Dot2
- xpos 697
- ypos 256
-}
-Merge2 {
- inputs 2
- name Merge1
- xpos 839
- ypos 253
-}
-Read {
- inputs 0
- file_type mov
- file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/ProRes_aces2065/vbr-tester-01_v01_aces2065_ProRes4444XQ.mov
- format "1920 1080 0 0 1920 1080 1 HD_1080"
- last 555
- origlast 555
- origset true
- name Read7
- xpos 1142
- ypos 29
-}
-TimeOffset {
- time_offset -1
- time ""
- name TimeOffset6
- xpos 1142
- ypos 119
-}
-Read {
- inputs 0
- file_type mov
- file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/ProRes_aces2065/vbr-tester-01_v01_aces2065_ProRes4444XQ.mov
- format "1920 1080 0 0 1920 1080 1 HD_1080"
- last 555
- origlast 555
- origset true
- colorspace default
- name Read6
- xpos 1003
- ypos 29
-}
-TimeOffset {
- time_offset -1
- time ""
- name TimeOffset5
- xpos 1003
- ypos 119
-}
-push $N8e9e9400
-Merge2 {
- inputs 2
- operation difference
- name Merge2
- xpos 1003
- ypos 211
-}
-Grade {
- multiply 50
- name Grade1
- xpos 1003
- ypos 235
-}
-Write {
- file /Users/nstrong/IdeaProjects/VBR-visualizer/output/compression_differences/ProRes4444XQ.jpg
- file_type jpeg
- _jpeg_quality 1
- _jpeg_sub_sampling 4:4:4
- colorspace color_picking
- checkHashOnRead false
- version 8
- ocioColorspace scene_linear
- display ACES
- view sRGB
- name Write3
- xpos 1003
- ypos 259
-}
 Viewer {
- inputs 2
- frame 240
- frame_range 63-555
+ frame_range 63-554
  frame_range_lock true
  gl_buffer_depth half-float
  useGPUForViewer true

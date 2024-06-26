@@ -15,7 +15,7 @@ define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
                     <page id="Viewer.1"/>
                 </dock>
                 <split size="426"/>
-                <dock id="" activePageId="DAG.1" focus="true">
+                <dock id="" activePageId="DAG.1">
                     <page id="DAG.1"/>
                     <page id="Curve Editor.1"/>
                     <page id="DopeSheet.1"/>
@@ -174,6 +174,11 @@ expoglow { name expoglow1
  ypos -217
  selected false
  disable false
+
+ xpos 1241
+ ypos -217
+ selected false
+ disable false
 }
 ColorBars {
  inputs 0
@@ -196,7 +201,7 @@ Read {
  xpos 434
  ypos 15
 }
-set N55968e00 [stack 0]
+set N470e6e00 [stack 0]
 Reformat {
  black_outside true
  name Reformat5
@@ -342,42 +347,13 @@ Write {
  xpos -310
  ypos 122
 }
-push $N55968e00
-Write {
- file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/vbr-tester-01_v01_rec709_h264.mov
- file_type mov
- mov64_format "mov (QuickTime / MOV)"
- mov64_codec h264
- mov64_dnxhr_codec_profile "LB 4:2:2 8-bit"
- mov_prores_codec_profile "ProRes 4:2:2 LT 10-bit"
- mov_h264_codec_profile "High 4:2:0 8-bit"
- mov64_pixel_format {{0}}
- mov64_quality Custom
- mov64_fast_start true
- mov64_write_timecode true
- mov64_gop_size 12
- mov64_b_frames 0
- mov64_bitrate 28000
- mov64_bitrate_tolerance 0
- mov64_quality_min 1
- mov64_quality_max 3
- colorspace "Output - Rec.709"
- checkHashOnRead false
- version 19
- ocioColorspace scene_linear
- display ACES
- view sRGB
- name Write2
- xpos 434
- ypos 137
-}
-push $N55968e00
+push $N470e6e00
 Dot {
  name Dot1
  xpos 873
  ypos 51
 }
-set N8e9e9400 [stack 0]
+set N45248200 [stack 0]
 TimeOffset {
  time ""
  name TimeOffset4
@@ -427,25 +403,6 @@ Read {
  last 555
  origlast 555
  origset true
- name Read7
- xpos 1142
- ypos 29
-}
-TimeOffset {
- time_offset -1
- time ""
- name TimeOffset6
- xpos 1142
- ypos 119
-}
-Read {
- inputs 0
- file_type mov
- file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/ProRes_aces2065/vbr-tester-01_v01_aces2065_ProRes4444XQ.mov
- format "1920 1080 0 0 1920 1080 1 HD_1080"
- last 555
- origlast 555
- origset true
  colorspace default
  name Read6
  xpos 1003
@@ -458,7 +415,7 @@ TimeOffset {
  xpos 1003
  ypos 119
 }
-push $N8e9e9400
+push $N45248200
 Merge2 {
  inputs 2
  operation difference
@@ -472,24 +429,56 @@ Grade {
  xpos 1003
  ypos 235
 }
+Read {
+ inputs 0
+ file_type mov
+ file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/ProRes_aces2065/vbr-tester-01_v01_aces2065_ProRes4444XQ.mov
+ format "1920 1080 0 0 1920 1080 1 HD_1080"
+ last 555
+ origlast 555
+ origset true
+ name Read7
+ xpos 1142
+ ypos 29
+}
+TimeOffset {
+ time_offset -1
+ time ""
+ name TimeOffset6
+ xpos 1142
+ ypos 119
+}
+push $N470e6e00
 Write {
- file /Users/nstrong/IdeaProjects/VBR-visualizer/output/compression_differences/ProRes4444XQ.jpg
- file_type jpeg
- _jpeg_quality 1
- _jpeg_sub_sampling 4:4:4
- colorspace color_picking
+ file /Users/nstrong/IdeaProjects/VBR-visualizer/test_footage/vbr-tester-01_v01_rec709_h264.mov
+ file_type mov
+ mov64_format "mov (QuickTime / MOV)"
+ mov64_codec h264
+ mov64_dnxhr_codec_profile "LB 4:2:2 8-bit"
+ mov_prores_codec_profile "ProRes 4:2:2 LT 10-bit"
+ mov_h264_codec_profile "High 4:2:0 8-bit"
+ mov64_pixel_format {{0}}
+ mov64_quality Custom
+ mov64_fast_start true
+ mov64_write_timecode true
+ mov64_gop_size 12
+ mov64_b_frames 0
+ mov64_bitrate 28000
+ mov64_bitrate_tolerance 0
+ mov64_quality_min 1
+ mov64_quality_max 3
+ colorspace "Output - Rec.709"
  checkHashOnRead false
- version 8
+ version 19
  ocioColorspace scene_linear
  display ACES
  view sRGB
- name Write3
- xpos 1003
- ypos 259
+ name Write2
+ xpos 434
+ ypos 137
 }
 Viewer {
  inputs 2
- frame 240
  frame_range 63-555
  frame_range_lock true
  gl_buffer_depth half-float
@@ -501,4 +490,21 @@ Viewer {
  name Viewer1
  xpos 115
  ypos 316
+}
+push $N470e6e00
+Write {
+ file /Users/nstrong/IdeaProjects/VBR-visualizer/output/compression_differences/Original.jpg
+ file_type jpeg
+ _jpeg_quality 1
+ _jpeg_sub_sampling 4:4:4
+ colorspace color_picking
+ checkHashOnRead false
+ version 10
+ ocioColorspace scene_linear
+ display ACES
+ view sRGB
+ name Write3
+ selected true
+ xpos 1003
+ ypos 308
 }

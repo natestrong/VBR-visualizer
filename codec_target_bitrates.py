@@ -7,10 +7,11 @@ CODEC_TARGET_BITRATES = {
     'ProRes 422': {'bitrate': 147, 'filename': 'prores422'},
     'ProRes 422 LT': {'bitrate': 102, 'filename': 'prores422lt'},
     'ProRes 422 Proxy': {'bitrate': 45, 'filename': 'prores422proxy'},
-    'DNxHR HQX': {'bitrate': 666, 'filename': 'dnxhr_hqx'},
-    'DNxHR HQ': {'bitrate': 666, 'filename': 'dnxhr_hq'},
-    'DNxHR SQ': {'bitrate': 441, 'filename': 'dnxhr_sq'},
-    'DNxHR LB': {'bitrate': 137, 'filename': 'dnxhr_lb'},
+    'DNxHR 444': {'bitrate': 666, 'filename': 'dnxhr_444'},
+    'DNxHR HQX': {'bitrate': 666, 'filename': 'dnxhr_hqx422'},
+    'DNxHR HQ': {'bitrate': 666, 'filename': 'dnxhr_hq422'},
+    'DNxHR SQ': {'bitrate': 441, 'filename': 'dnxhr_sq422'},
+    'DNxHR LB': {'bitrate': 137, 'filename': 'dnxhr_lb422'},
     'H264': {'bitrate': 16, 'filename': 'h264'},
 }
 

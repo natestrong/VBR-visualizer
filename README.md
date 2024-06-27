@@ -56,22 +56,38 @@ Below are the charts generated from analyzing the test footage. Each chart shows
 The following charts compare the compression quality of each of the codecs by taking the compressed result and merging them into the original result with a "difference" equation. And then that result is multiplied by 50, so that it's easier to see the visual differences.
 
 ### Reference Frame
-![Original.jpg](output%2Fcompression_differences%2FOriginal.jpg)
+![Original.jpg](output/compression_differences/Original.jpg)
 
 ### ProRes 4444 XQ
-![ProRes4444XQ.jpg](output%2Fcompression_differences%2FProRes4444XQ.jpg)
+![ProRes4444XQ.jpg](output/compression_differences/ProRes4444XQ.jpg)
 
 ### ProRes 4444
-![ProRes4444.jpg](output%2Fcompression_differences%2FProRes4444.jpg)
+![ProRes4444.jpg](output/compression_differences/ProRes4444.jpg)
 
 ### ProRes 422 HQ
-![ProRes422HQ.jpg](output%2Fcompression_differences%2FProRes422HQ.jpg)
+![ProRes422HQ.jpg](output/compression_differences/ProRes422HQ.jpg)
 
 ### ProRes 422
-![ProRes422.jpg](output%2Fcompression_differences%2FProRes422.jpg)
+![ProRes422.jpg](output/compression_differences/ProRes422.jpg)
 
 ### ProRes 422 LT
-![ProRes422LT.jpg](output%2Fcompression_differences%2FProRes422LT.jpg)
+![ProRes422LT.jpg](output/compression_differences/ProRes422LT.jpg)
 
 ### ProRes 422 Proxy
-![ProRes422Proxy.jpg](output%2Fcompression_differences%2FProRes422Proxy.jpg)
+![ProRes422Proxy.jpg](output/compression_differences/ProRes422Proxy.jpg)
+
+# DNxHR
+### DNxHR 444
+![DNxHR444.jpg](output/compression_differences/DNxHR_444.jpg)
+
+### DNxHR HQX 422
+![DNxHRHQX.jpg](output/compression_differences/DNxHR_HQX422.jpg)
+
+### DNxHR HQ 422
+![DNxHRHQ.jpg](output/compression_differences/DNxHR_HQ422.jpg)
+
+### DNxHR SQ 422
+![DNxHRSQ.jpg](output/compression_differences/DNxHR_SQ422.jpg)
+
+### DNxHR LB 422
+![DNxHRLB.jpg](output/compression_differences/DNxHR_LB422.jpg)

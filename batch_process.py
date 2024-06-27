@@ -3,7 +3,7 @@ import subprocess
 from codec_target_bitrates import CODEC_TARGET_BITRATES
 
 # Path to the folder containing the files to process
-input_folder = os.path.join(os.path.dirname(__file__), 'test_footage/h264_rec709')
+input_folder = os.path.join(os.path.dirname(__file__), 'test_footage/DNxHR_rec2020')
 output_folder = os.path.join(os.path.dirname(__file__), 'output')
 
 
